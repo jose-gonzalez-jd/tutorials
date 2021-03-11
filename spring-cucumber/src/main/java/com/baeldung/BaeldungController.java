@@ -1,22 +1,19 @@
 package com.baeldung;
 
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BaeldungController {
 
-    @RequestMapping(method = { RequestMethod.GET }, value = { "/hello" })
-    public String sayHello(HttpServletResponse response) {
+    @GetMapping("/hello")
+    public String sayHello() {
         return "hello";
     }
 
-    @RequestMapping(method = { RequestMethod.POST }, value = { "/baeldung" })
-    public String sayHelloPost(HttpServletResponse response) {
+    @PostMapping("/baeldung")
+    public String sayHelloPost() {
         return "hello";
     }
-
 }
